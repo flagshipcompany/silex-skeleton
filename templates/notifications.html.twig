@@ -1,0 +1,3 @@
+{% for n in nots %}
+    <div class="alert alert-{{ n.class }}">{{ n.message | raw }}</div>
+{% endfor %}

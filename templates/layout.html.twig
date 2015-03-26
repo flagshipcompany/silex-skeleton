@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flagship's Silex Skeleton</title>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            /* Sticky footer styles
+            -------------------------------------------------- */
+            html {
+              position: relative;
+              min-height: 100%;
+            }
+            body {
+              /* Margin bottom by footer height */
+              margin-bottom: 60px;
+            }
+            .footer {
+              position: absolute;
+              bottom: 0;
+              width: 100%;
+              /* Set the fixed height of the footer here */
+              height: 60px;
+              background-color: #f5f5f5;
+            }
+            
+            .container {
+              width: auto;
+              padding: 0 15px;
+            }
+            .container .text-muted {
+              margin: 20px 0;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Flagship's Silex Skeleton</h1>
+            <p class="lead">This is the HTML template</p>
+
+            {% set nots = app.session.getFlashBag.get('notifications') %}
+            {% include "notifications.html.twig" with nots %}
+            
+            {% block content %}
+
+            {% endblock %}
+
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <p class="text-muted">&copy; Flagship Courier Solutions {{ "now"|date('Y') }}</p>
+            </div>
+        </footer>
+    </body>
+</html>
